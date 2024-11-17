@@ -11,7 +11,8 @@ export const SEOdata = {
     image,
     creator,
     url: url(),
-    title: "React Template | Set up projects faster -  Just clone it",
+    title:
+      "Memolabs – Highly Secure, Reliable, and Scalability Distributed Data Storage System",
     description: "Yay",
   },
   aboutUsPage: {

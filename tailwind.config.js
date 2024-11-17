@@ -46,6 +46,10 @@ export default {
           "100%": {
             opacity: "1",
           },
+          slideInRight: {
+            "0%": { transform: "translateX(-100%)", opacity: "0" },
+            "100%": { transform: "translateX(0)", opacity: "1" },
+          },
         },
       },
       animation: {
@@ -53,11 +57,12 @@ export default {
         "slide-down": "slide-down 300ms linear forwards",
         "slide-up": "slide-up 300ms linear forwards",
         "rotate-clockwise": "rotate-clockwise 1s infinite linear",
+        slideInRight: "slideInRight 1s ease-out",
         "loader-opacity": "loader 1s ease-in-out alternate infinite",
       },
       colors: {
         primary: {
-          DEFAULT: "#ED8850",
+          DEFAULT: "#235dd3",
           100: "#FFF4EE",
         },
         dark: {

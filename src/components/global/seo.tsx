@@ -10,7 +10,7 @@
 //   META_URL,
 // } from "../../constants";
 
-import { SEOdata } from "../constants/seo";
+import { SEOdata } from "../../constants/seo";
 import { Helmet } from "react-helmet-async";
 
 export default function SEO({
@@ -32,7 +32,9 @@ export default function SEO({
 }) {
   return (
     <Helmet>
-      <title>{title}</title>
+      <title>
+        {title} | {SEOdata.homePage.title}
+      </title>
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
