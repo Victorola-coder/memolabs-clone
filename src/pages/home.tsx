@@ -18,7 +18,10 @@ const partners = [
 
 const newsPartners = [
   { src: "/images/newsfile.png", alt: "Newsfile", height: "h-[55px]" },
-  { src: "/images/yahoo.png", alt: "Yahoo" },
+  { src: "/images/yahoo.png", alt: "Yahoo Finance" },
+  { src: "/images/newsbtc.png", alt: "NewsBTC" },
+  { src: "/images/ap.png", alt: "AP" },
+  { src: "/images/coinspeaker.png", alt: "Coinspeaker" },
 ];
 
 export default function Home() {
@@ -134,22 +137,79 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Decentralized Applications Section */}
+      <section className="py-20 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent">
+            Powering Decentralized Applications
+          </h2>
+          <p className="text-center text-gray-400 mb-12">
+            Build a reliable data storage foundation for WEB3.0
+          </p>
+
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* Left side - Image */}
+            <div className="w-full lg:w-1/2">
+              <img
+                src="/images/Application.png"
+                alt="Decentralized Applications"
+                className="w-full h-auto"
+              />
+            </div>
+
+            {/* Right side - Features */}
+            <div className="w-full lg:w-1/2 space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold mb-3 text-gray-100">
+                  Metaverse & NFT
+                </h3>
+                <p className="text-gray-400">
+                  Provide decentralized underlying data storage technology for
+                  Metaverse&NFT to open up data value transfer channels, and
+                  help human civilization survive forever.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-3 text-gray-100">
+                  Web 3.0
+                </h3>
+                <p className="text-gray-400">
+                  Memo provides extensible and adaptable storage layers to Web
+                  3.0 to deal with the exponential growth in data volume and to
+                  support the Internet of value with data as a factor of
+                  production.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-3 text-gray-100">dApps</h3>
+                <p className="text-gray-400">
+                  Provide development support for dApps, improve data response
+                  speed and reliability
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Partners Section */}
       <section className="py-20 bg-gray-800">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent">
             Partners
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition-colors"
+                className="flex items-center justify-center p-6 hover:bg-gray-700 transition-colors rounded-lg"
               >
                 <img
                   src={partner.src}
                   alt={partner.alt}
-                  className="max-h-16 filter brightness-0 invert"
+                  className="max-h-12 w-auto filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity"
                 />
               </div>
             ))}
@@ -163,18 +223,15 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent">
             In the News
           </h2>
-          <div className="flex flex-wrap justify-center items-center gap-8">
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
             {newsPartners.map((partner, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-center bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors"
-              >
+              <div key={index} className="flex items-center justify-center">
                 <img
                   src={partner.src}
                   alt={partner.alt}
                   className={`${
                     partner.height || "h-12"
-                  } filter brightness-0 invert`}
+                  } w-auto filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity`}
                 />
               </div>
             ))}
