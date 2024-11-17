@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SEO } from "../components/global";
+import CookieConsent from "../components/global/CookieConsent";
 
 const partners = [
   { src: "/images/DHVC.png", alt: "DHVC" },
@@ -33,23 +34,45 @@ export default function Home() {
       <SEO title="Home" />
 
       {/* Hero Section */}
-      <section className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 flex items-center">
+      <section
+        className="min-h-screen flex items-center relative z-10"
+        style={{
+          backgroundImage: "url('/images/home_banner.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div className="container mx-auto px-4">
-          <div className="animate-slideInRight">
-            <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent">
+          <div
+            className="animate-slideInRight"
+            style={{
+              animation: "lightSpeedInRight 1s ease-out",
+            }}
+          >
+            <h1 className="text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent">
               MEMO
             </h1>
-            <p className="text-2xl font-bold mb-2 text-gray-100">
+            <p className="text-3xl font-semibold mb-3 text-gray-100">
               Decentralized Storage Designed For Your Future
             </p>
-            <p className="text-xl text-gray-400">
+            <p className="text-xl text-gray-400 mb-12">
               — Outlast human civilization
             </p>
-            <button className="mt-8 bg-gradient-to-r from-blue-500 to-green-400 text-white px-8 py-3 rounded-full hover:opacity-90 transition-opacity">
+            <button
+              className="px-10 py-4 bg-gradient-to-r from-blue-500 to-green-400 text-white text-lg font-medium rounded-full hover:opacity-90 transition-opacity"
+              style={{
+                animation: "lightSpeedInLeft 1s ease-out",
+              }}
+            >
               Start for Free
             </button>
           </div>
         </div>
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-900/80 pointer-events-none"
+          aria-hidden="true"
+        ></div>
       </section>
 
       {/* Technology Section */}
@@ -239,34 +262,111 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Cookie Consent */}
-      {showCookieConsent && (
-        <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-blue-600 to-green-500 text-white p-4 z-50">
-          <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <div>
-              <h4 className="font-bold text-lg mb-2">Cookies on MEMO</h4>
-              <p>
-                We use cookies to improve your experience on our website. We'll
-                never sell this data to anyone.
-              </p>
-            </div>
-            <div className="flex gap-4 mt-4 md:mt-0">
-              <button
-                onClick={() => setShowCookieConsent(false)}
-                className="px-6 py-2 border-2 border-white rounded-full hover:bg-white hover:text-blue-500 transition-colors"
-              >
-                No Thanks
-              </button>
-              <button
-                onClick={() => setShowCookieConsent(false)}
-                className="px-6 py-2 bg-white text-blue-500 rounded-full hover:bg-opacity-90 transition-colors"
-              >
-                Sounds Good
-              </button>
+      {/* Roadmap Section */}
+      <section className="py-20 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent">
+            Roadmap
+          </h2>
+
+          {/* Desktop Timeline (hidden on mobile) */}
+          <div className="hidden lg:block">
+            <img
+              src="/images/roadmap-desktop.png"
+              alt="MEMO Roadmap Background"
+              className="w-full h-auto"
+            />
+          </div>
+
+          {/* Mobile Timeline (hidden on desktop) */}
+          <div className="lg:hidden relative">
+            <img
+              src="/images/roadmap-mobile-line.png"
+              alt="MEMO Roadmap Background"
+              className="w-full h-auto"
+            />
+
+            <div className="absolute top-0 left-8 space-y-24">
+              <div className="relative">
+                <div className="ml-6">
+                  <h3 className="text-lg font-semibold text-white">Q3 2017</h3>
+                  <p className="text-gray-300">Project Start</p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="ml-6">
+                  <h3 className="text-lg font-semibold text-white">Q1 2018</h3>
+                  <p className="text-gray-300">
+                    System Architecture Design 1.0
+                  </p>
+                  <p className="text-sm text-gray-400">White Paper 1.0</p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="ml-6">
+                  <h3 className="text-lg font-semibold text-white">Q4 2019</h3>
+                  <p className="text-gray-300">
+                    Implement Basic Storage Function
+                  </p>
+                  <p className="text-sm text-gray-400">
+                    Integrate Blockchain Payment and Incentive System
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="ml-6">
+                  <h3 className="text-lg font-semibold text-white">Q3 2020</h3>
+                  <p className="text-gray-300">
+                    Upgrade the Proof of Data Storage
+                  </p>
+                  <p className="text-sm text-gray-400">Security Audit</p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="ml-6">
+                  <h3 className="text-lg font-semibold text-white">Q2 2021</h3>
+                  <p className="text-gray-300">Phecda Test Network Online</p>
+                  <p className="text-sm text-gray-400">
+                    Start the Provider/User Test
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="ml-6">
+                  <h3 className="text-lg font-semibold text-white">Q4 2022</h3>
+                  <p className="text-gray-300">Megrez Version Online</p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="ml-6">
+                  <h3 className="text-lg font-semibold text-white">Q2 2023</h3>
+                  <p className="text-gray-300">
+                    Data Verification, and data wallets
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="ml-6">
+                  <h3 className="text-lg font-semibold text-white">Q2 2024</h3>
+                  <p className="text-gray-300">
+                    Improved Storage Ecosystem, Support
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      )}
+      </section>
+
+      {/* Cookie Consent */}
+      <CookieConsent />
 
       {/* Video Modal */}
       {showVideo && (
