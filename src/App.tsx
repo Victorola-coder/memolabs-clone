@@ -8,12 +8,13 @@ import { useEffect } from "react";
 import { Home, NotFound } from "./pages";
 
 import { Scroll } from "./animation";
+import { Navbar } from "./components/global";
 
-// this is just for dome paages you want to repeat same component
+// this is just for dome pages you want to repeat same component
 const Root = () => {
   return (
     <div>
-      {/* here we might add navbar */}
+      <Navbar />
       <ScrollRestoration />
       <Outlet />
       {/* here maybe footer, it will show in all the pages */}
